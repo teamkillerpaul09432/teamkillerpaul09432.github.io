@@ -1,7 +1,1174 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphacar - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background-color: #212529;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #343a40;
+        }
+        .content {
+            padding: 20px;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        /* Footer Styles */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container-fluid {
+            flex: 1;
+        }
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-md-2 sidebar">
+                <h3 class="text-white text-center mb-4">Alphacar</h3>
+                <nav>
+                    <a href="/dashboard" class="nav-link"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/neue_reparatur" class="nav-link"><i class="fas fa-wrench me-2"></i>Neue Reparatur</a>
+                    <a href="/statistik" class="nav-link"><i class="fas fa-chart-bar me-2"></i>Statistik</a>
+                    <a href="/bezahlung" class="nav-link"><i class="fas fa-euro-sign me-2"></i>Bezahlung</a>
+                    
+                    <a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt me-2"></i>Abmelden</a>
+                </nav>
+            </div>
+            <div class="col-md-10 content">
+            
+            
+                
+            
+            
+<div class="container-fluid">
+    <h1 class="mb-4 text-white">Willkommen, Paul Schmidt!</h1>
+
+    <div class="row">
+        <!-- Statistik-Karten -->
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Heutige Arbeiten</h5>
+                    <h2 class="card-text">28</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Heutiger Umsatz</h5>
+                    <h2 class="card-text">119.686€</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Monatlicher Umsatz</h5>
+                    <h2 class="card-text">15.809.078€</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Gesamt Arbeiten</h5>
+                    <h2 class="card-text">146</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Letzte Arbeiten -->
+        <div class="col-md-8 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Letzte Arbeiten</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Datum</th>
+                                    
+                                    <th>Fahrzeug</th>
+                                    <th>Art</th>
+                                    <th>Kosten</th>
+                                    <th>Aktionen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td>25.05.2025 14:32</td>
+                                    
+                                    <td>Drafter</td>
+                                    <td>Reparatur</td>
+                                    <td>1.200€</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            
+                                            
+                                            <a href="/edit_reparatur/2021" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>25.05.2025 14:26</td>
+                                    
+                                    <td>Ffw kef</td>
+                                    <td>Reparatur</td>
+                                    <td>1.548€</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            
+                                            
+                                            <a href="/edit_reparatur/2020" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>25.05.2025 13:52</td>
+                                    
+                                    <td>20 I Erik Sergeev</td>
+                                    <td>Reparatur</td>
+                                    <td>1.200€</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            
+                                            
+                                            <a href="/edit_reparatur/2019" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>25.05.2025 13:43</td>
+                                    
+                                    <td>F840r</td>
+                                    <td>Reparatur</td>
+                                    <td>2.993€</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            
+                                            
+                                            <a href="/edit_reparatur/2018" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>25.05.2025 13:28</td>
+                                    
+                                    <td>164 I Toni Tepper</td>
+                                    <td>Reparatur</td>
+                                    <td>1.200€</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            
+                                            
+                                            <a href="/edit_reparatur/2017" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>25.05.2025 13:11</td>
+                                    
+                                    <td>Argento7f</td>
+                                    <td>Reparatur</td>
+                                    <td>2.503€</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            
+                                            
+                                            <a href="/edit_reparatur/2016" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>25.05.2025 13:09</td>
+                                    
+                                    <td>Gbharmann</td>
+                                    <td>Reparatur</td>
+                                    <td>1.200€</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            
+                                            
+                                            <a href="/edit_reparatur/2015" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>25.05.2025 12:52</td>
+                                    
+                                    <td>F840r</td>
+                                    <td>Reparatur</td>
+                                    <td>1.435€</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            
+                                            
+                                            <a href="/edit_reparatur/2014" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>25.05.2025 12:41</td>
+                                    
+                                    <td>Winky</td>
+                                    <td>Radio</td>
+                                    <td>3.200€</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            
+                                            
+                                            <a href="/edit_reparatur/2013" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>25.05.2025 12:41</td>
+                                    
+                                    <td>Winky</td>
+                                    <td>Tuning</td>
+                                    <td>4.000€</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            
+                                            
+                                            <a href="/edit_reparatur/2012" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Paginierung -->
+                    
+                    <div class="pagination-container p-3 border-top">
+                        <nav aria-label="Seiten Navigation">
+                            <ul class="pagination justify-content-center mb-0">
+                                <!-- Zurück-Button -->
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </a>
+                                </li>
+                                
+                                <!-- Erste Seite -->
+                                
+                                
+                                <!-- Seitenzahlen -->
+                                
+                                <li class="page-item active">
+                                    <a class="page-link" href="/dashboard?page=1">1</a>
+                                </li>
+                                
+                                <li class="page-item ">
+                                    <a class="page-link" href="/dashboard?page=2">2</a>
+                                </li>
+                                
+                                
+                                <!-- Letzte Seite -->
+                                
+                                
+                                <li class="page-item disabled">
+                                    <span class="page-link">...</span>
+                                </li>
+                                
+                                <li class="page-item">
+                                    <a class="page-link" href="/dashboard?page=15">15</a>
+                                </li>
+                                
+                                
+                                <!-- Weiter-Button -->
+                                <li class="page-item ">
+                                    <a class="page-link" href="/dashboard?page=2">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Umsatz-Chart -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="mb-0">Umsatzentwicklung</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="umsatzChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+<script>
+    // Umsatz-Chart
+    var ctx = document.getElementById('umsatzChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["19.05", "20.05", "21.05", "22.05", "23.05", "24.05", "25.05"],
+            datasets: [{
+                label: 'Täglicher Umsatz',
+                data: [720210.0, 145696.0, 516703.0, 625817.0, 1179589.0, 674617.0, 119686.0],
+                borderColor: '#90caf9',
+                backgroundColor: 'rgba(144, 202, 249, 0.1)',
+                tension: 0.1,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#e3e3e3'
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    },
+                    ticks: {
+                        color: '#e3e3e3'
+                    }
+                },
+                x: {
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    },
+                    ticks: {
+                        color: '#e3e3e3'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+    
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <small>Entwickelt von nuqqeTde</small>
+        </div>
+    </footer>
 </body>
-</html>
+</html> 
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphacar - Neue Reparatur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background-color: #212529;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #343a40;
+        }
+        .content {
+            padding: 20px;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        /* Footer Styles */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container-fluid {
+            flex: 1;
+        }
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-md-2 sidebar">
+                <h3 class="text-white text-center mb-4">Alphacar</h3>
+                <nav>
+                    <a href="/dashboard" class="nav-link"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/neue_reparatur" class="nav-link"><i class="fas fa-wrench me-2"></i>Neue Reparatur</a>
+                    <a href="/statistik" class="nav-link"><i class="fas fa-chart-bar me-2"></i>Statistik</a>
+                    <a href="/bezahlung" class="nav-link"><i class="fas fa-euro-sign me-2"></i>Bezahlung</a>
+                    
+                    <a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt me-2"></i>Abmelden</a>
+                </nav>
+            </div>
+            <div class="col-md-10 content">
+            
+            
+                
+            
+            
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h4 class="mb-0">Neue Reparatur / Tuning eintragen</h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <input id="csrf_token" name="csrf_token" type="hidden" value="IjFjMTc4YTIzNmFlMTgzNmEzMWJjNjk2YzIzNjExZjQ3Y2E1MjZiYWEi.aDM6CQ.6GW6e5lm_8aud-YNnlh8OQe-iyw">
+                        <div class="mb-3">
+                            <label class="form-label" for="fahrzeug">Fahrzeug/Dienstnummer</label>
+                            <input class="form-control" id="fahrzeug" name="fahrzeug" placeholder="z.B. Sultan RS (Bei Sammelrechnung: Dienstnummer/Name)" required type="text" value="">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label" for="art">Art der Arbeit</label>
+                            <select class="form-select" id="art" name="art" required><option value="">Bitte wählen...</option><option value="Reparatur">Reparatur</option><option value="Tuning">Tuning</option><option value="Radio">Radio</option><option value="Abschleppen">Abschleppen</option></select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label" for="kosten">Kosten (€)</label>
+                            <input class="form-control" id="kosten" min="0" name="kosten" placeholder="0.00" required step="0.01" type="text" value="">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="ist_sammelrechnung">Sammelrechnung</label>
+                            <select class="form-select" id="ist_sammelrechnung" name="ist_sammelrechnung" onchange="toggleUnternehmen(this.value)"><option value="0">Nein</option><option value="1">Ja</option></select>
+                        </div>
+
+                        <div class="mb-3" id="unternehmenField" style="display: none;">
+                            <label class="form-label" for="unternehmen">Unternehmen</label>
+                            <select class="form-select" id="unternehmen" name="unternehmen"><option value="">Bitte wählen...</option><option value="4">Skytrip</option><option value="5">Klinikum</option><option value="6">Stadtverwaltung</option><option value="7">Berufsfeuerwehr_neu</option><option value="8">Polizei_neu</option><option value="9">Bettory</option><option value="10">Express Logistik</option><option value="11">StadtWERKE</option></select>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Eintragen">
+                            <a href="/dashboard" class="btn btn-secondary">Abbrechen</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+<script>
+function toggleUnternehmen(value) {
+    const unternehmenField = document.getElementById('unternehmenField');
+    const unternehmenSelect = document.getElementById('unternehmen');
+    if (value === '1') {
+        unternehmenField.style.display = 'block';
+        unternehmenSelect.required = true;
+    } else {
+        unternehmenField.style.display = 'none';
+        unternehmenSelect.required = false;
+    }
+}
+
+// Initial state
+document.addEventListener('DOMContentLoaded', function() {
+    const sammelrechnungSelect = document.getElementById('ist_sammelrechnung');
+    if (sammelrechnungSelect) {
+        toggleUnternehmen(sammelrechnungSelect.value);
+    }
+});
+</script>
+
+    
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <small>Entwickelt von nuqqeTde</small>
+        </div>
+    </footer>
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphacar - Statistik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background-color: #212529;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #343a40;
+        }
+        .content {
+            padding: 20px;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        /* Footer Styles */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container-fluid {
+            flex: 1;
+        }
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-2 sidebar">
+                <h3 class="text-white text-center mb-4">Alphacar</h3>
+                <nav>
+                    <a href="/dashboard" class="nav-link"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/neue_reparatur" class="nav-link"><i class="fas fa-wrench me-2"></i>Neue Reparatur</a>
+                    <a href="/statistik" class="nav-link"><i class="fas fa-chart-bar me-2"></i>Statistik</a>
+                    <a href="/bezahlung" class="nav-link"><i class="fas fa-euro-sign me-2"></i>Bezahlung</a>
+
+                    <a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt me-2"></i>Abmelden</a>
+                </nav>
+            </div>
+            <div class="col-md-10 content">
+
+
+
+
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>
+
+            Meine Statistiken
+
+        </h1>
+        <button class="btn btn-primary" onclick="exportToPDF()">
+            <i class="fas fa-file-pdf me-2"></i>Als PDF exportieren
+        </button>
+    </div>
+
+    <!-- Filter -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="GET" class="row g-3">
+                <div class="col-md-4">
+                    <label for="zeitraum" class="form-label">Zeitraum</label>
+                    <select class="form-select" id="zeitraum" name="zeitraum">
+                        <option value="heute" >Heute</option>
+                        <option value="woche" >Diese Woche</option>
+                        <option value="monat" selected>Dieser Monat</option>
+                        <option value="jahr" >Dieses Jahr</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="art" class="form-label">Art der Arbeit</label>
+                    <select class="form-select" id="art" name="art">
+                        <option value="alle" selected>Alle</option>
+                        <option value="Reparatur" >Reparatur</option>
+                        <option value="Tuning" >Tuning</option>
+                        <option value="Radio" >Radio</option>
+                    </select>
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Filter anwenden</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Umsatz-Chart -->
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="mb-0">
+
+                        Mein Umsatz
+
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="mitarbeiterChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verteilung der Arbeiten -->
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="mb-0">Verteilung der Arbeiten</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="arbeitsverteilungChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detaillierte Statistiken -->
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">
+
+                Meine detaillierten Statistiken
+
+            </h5>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+
+                            <th>Anzahl Aufträge</th>
+                            <th>Gesamtumsatz</th>
+                            <th>Durchschnitt pro Auftrag</th>
+                            <th>Meistbearbeitete Dienstnummern/Fahrzeuge</th>
+                            <th>Aktionen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+
+                            <td>146</td>
+                            <td>1.683.341€</td>
+                            <td>11.530€</td>
+                            <td>rsdscout, Rwagvenm, F840r</td>
+                            <td>
+                                <button class="btn btn-sm btn-info" onclick="showDetails(24)">
+                                    <i class="fas fa-list me-1"></i>Details
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal für Details -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailsModalLabel">Detaillierte Mitarbeiter-Statistiken</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Schließen"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Hier werden die Details dynamisch eingefügt -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Füge jsPDF hinzu -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+<script>
+// Mitarbeiter/Umsatz Chart
+const mitarbeiterCtx = document.getElementById('mitarbeiterChart').getContext('2d');
+new Chart(mitarbeiterCtx, {
+    type: 'bar',
+    data: {
+        labels: ["Paul Schmidt"],
+        datasets: [{
+            label: 'Umsatz (€)',
+            data: [1683341.0],
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+// Arbeitsverteilung Chart
+const verteilungCtx = document.getElementById('arbeitsverteilungChart').getContext('2d');
+new Chart(verteilungCtx, {
+    type: 'pie',
+    data: {
+        labels: ["Abschleppen", "Radio", "Reparatur", "Tuning"],
+        datasets: [{
+            data: [2, 3, 98, 43],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+function exportToPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Titel mit dynamischem Systemnamen
+    doc.setFontSize(20);
+    doc.setTextColor(33, 37, 41);
+    doc.text("Alphacar - Statistikbericht", 14, 20, { align: 'left' });
+
+    // Trennlinie
+    doc.setDrawColor(33, 37, 41);
+    doc.setLineWidth(0.5);
+    doc.line(14, 25, 196, 25);
+
+    // Datum und Filter-Informationen
+    doc.setFontSize(11);
+    doc.setTextColor(108, 117, 125);
+    doc.text(`Erstellt am: ${new Date().toLocaleDateString('de-DE')}`, 14, 35);
+    doc.text(`Zeitraum: ${document.getElementById('zeitraum').options[document.getElementById('zeitraum').selectedIndex].text}`, 14, 42);
+    doc.text(`Art der Arbeit: ${document.getElementById('art').options[document.getElementById('art').selectedIndex].text}`, 14, 49);
+
+    // Statistiktabelle
+    const tableData = [];
+    const table = document.querySelector('.table');
+    const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent);
+
+    table.querySelectorAll('tbody tr').forEach(tr => {
+        const row = Array.from(tr.querySelectorAll('td')).map(td => td.textContent);
+        tableData.push(row);
+    });
+
+    doc.autoTable({
+        head: [headers],
+        body: tableData,
+        startY: 55,
+        theme: 'grid',
+        styles: {
+            fontSize: 9,
+            cellPadding: 3
+        },
+        headStyles: {
+            fillColor: [33, 37, 41],
+            textColor: [255, 255, 255],
+            fontSize: 10,
+            fontStyle: 'bold'
+        },
+        alternateRowStyles: {
+            fillColor: [249, 250, 251]
+        }
+    });
+
+    // Charts als Bilder einfügen
+    const mitarbeiterChart = document.getElementById('mitarbeiterChart');
+    const arbeitsverteilungChart = document.getElementById('arbeitsverteilungChart');
+
+    doc.addPage();
+
+    // Überschrift für die Grafiken
+    doc.setFontSize(16);
+    doc.setTextColor(33, 37, 41);
+    doc.text("Grafische Auswertungen", 14, 20);
+
+    // Trennlinie
+    doc.setDrawColor(33, 37, 41);
+    doc.setLineWidth(0.5);
+    doc.line(14, 25, 196, 25);
+
+    // Umsatz-Chart
+    doc.setFontSize(12);
+    doc.text("Umsatzverteilung", 14, 35);
+    doc.addImage(mitarbeiterChart.toDataURL(), 'PNG', 14, 40, 180, 90);
+
+    // Arbeitsverteilung-Chart
+    doc.text("Verteilung der Arbeiten", 14, 145);
+    doc.addImage(arbeitsverteilungChart.toDataURL(), 'PNG', 14, 150, 180, 90);
+
+    // Footer auf jeder Seite
+    const pageCount = doc.internal.getNumberOfPages();
+    for(let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+
+        // Trennlinie für Footer
+        doc.setDrawColor(33, 37, 41);
+        doc.setLineWidth(0.5);
+        doc.line(14, 270, 196, 270);
+
+        // Footer Text
+        doc.setFontSize(8);
+        doc.setTextColor(108, 117, 125);
+        doc.text("Alphacar | Erstellt mit einem Script von nuqqeT.de", 14, 280);
+        doc.text(`Seite ${i} von ${pageCount}`, 196, 280, { align: 'right' });
+    }
+
+    // PDF speichern
+    doc.save(`Alphacar-Statistik-${new Date().toISOString().split('T')[0]}.pdf`);
+}
+
+function showDetails(userId) {
+    // Hole die detaillierten Daten vom Server
+    fetch(`/statistik/details/${userId}`)
+        .then(response => response.json())
+        .then(data => {
+            const tbody = document.getElementById('detailsTableBody');
+            tbody.innerHTML = '';
+
+            data.forEach(arbeit => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${new Date(arbeit.datum).toLocaleString('de-DE')}</td>
+                    <td>${arbeit.fahrzeug}</td>
+                    <td>${arbeit.art}</td>
+                    <td>${new Intl.NumberFormat('de-DE').format(arbeit.kosten)}€</td>
+                    <td>${arbeit.ist_sammelrechnung ? 'Ja' : 'Nein'}</td>
+                    <td>${arbeit.unternehmen || '-'}</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            // Öffne das Modal
+            const modal = new bootstrap.Modal(document.getElementById('detailsModal'));
+            modal.show();
+        })
+        .catch(error => {
+            console.error('Fehler beim Laden der Details:', error);
+            alert('Fehler beim Laden der Details. Bitte versuchen Sie es später erneut.');
+        });
+}
+</script>
+
+<!-- JavaScript einbinden -->
+<script src="/static/js/statistik.js"></script>
+
+
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <small>Entwickelt von nuqqeTde</small>
+        </div>
+    </footer>
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphacar - Bezahlung</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background-color: #212529;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #343a40;
+        }
+        .content {
+            padding: 20px;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        /* Footer Styles */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container-fluid {
+            flex: 1;
+        }
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-2 sidebar">
+                <h3 class="text-white text-center mb-4">Alphacar</h3>
+                <nav>
+                    <a href="/dashboard" class="nav-link"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/neue_reparatur" class="nav-link"><i class="fas fa-wrench me-2"></i>Neue Reparatur</a>
+                    <a href="/statistik" class="nav-link"><i class="fas fa-chart-bar me-2"></i>Statistik</a>
+                    <a href="/bezahlung" class="nav-link"><i class="fas fa-euro-sign me-2"></i>Bezahlung</a>
+
+                    <a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt me-2"></i>Abmelden</a>
+                </nav>
+            </div>
+            <div class="col-md-10 content">
+
+
+
+
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col">
+            <h1>Bezahlungsübersicht</h1>
+        </div>
+
+        <div class="col-auto">
+            <a href="/bezahlung/edit_iban" class="btn btn-primary">
+                <i class="fas fa-university me-2"></i>IBAN bearbeiten
+            </a>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Mitarbeiter Abrechnungen</h5>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Mitarbeiter</th>
+                            <th>IBAN</th>
+                            <th>Gewinnbeteiligung (Normal)</th>
+                            <th>Gewinnbeteiligung (Tuning)</th>
+                            <th>Offener Betrag</th>
+                            <th>Letzte Zahlung</th>
+                            <th>Aktionen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>Paul Schmidt</td>
+                            <td>
+
+                                DE024673
+
+                            </td>
+                            <td>5.0%</td>
+                            <td>5.0%</td>
+                            <td>
+
+                                    84.167€
+
+                            </td>
+                            <td>
+
+                                    <span class="text-muted">Keine Zahlungen</span>
+
+                            </td>
+                            <td class="actions-column">
+                                <div class="btn-group">
+
+
+                                    <a href="/bezahlung/abrechnung/24" class="btn btn-sm btn-info">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <small>Entwickelt von nuqqeTde</small>
+        </div>
+    </footer>
+</body>
+</html> 
