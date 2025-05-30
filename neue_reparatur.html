@@ -1,12 +1,149 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Platzhalter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphacar - Neue Reparatur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background-color: #212529;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #343a40;
+        }
+        .content {
+            padding: 20px;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        /* Footer Styles */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container-fluid {
+            flex: 1;
+        }
+        .footer {
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
-  <h1>Diese Seite ist ein Platzhalter für neue_reparatur.html</h1>
-  <p>Bitte erstelle echten Inhalt für diese Seite.</p>
-  <a href="index.html">Zurück zur Startseite</a>
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-md-2 sidebar">
+                <h3 class="text-white text-center mb-4">Alphacar</h3>
+                <nav>
+                    <a href="/dashboard" class="nav-link"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/neue_reparatur" class="nav-link"><i class="fas fa-wrench me-2"></i>Neue Reparatur</a>
+                    <a href="/statistik" class="nav-link"><i class="fas fa-chart-bar me-2"></i>Statistik</a>
+                    <a href="/bezahlung" class="nav-link"><i class="fas fa-euro-sign me-2"></i>Bezahlung</a>
+                    
+                    <a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt me-2"></i>Abmelden</a>
+                </nav>
+            </div>
+            <div class="col-md-10 content">
+            
+            
+                
+            
+            
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h4 class="mb-0">Neue Reparatur / Tuning eintragen</h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <input id="csrf_token" name="csrf_token" type="hidden" value="IjFjMTc4YTIzNmFlMTgzNmEzMWJjNjk2YzIzNjExZjQ3Y2E1MjZiYWEi.aDnGHw.qjgrdpGsTTAZPCDUcJQktvTH2Mw">
+                        <div class="mb-3">
+                            <label class="form-label" for="fahrzeug">Fahrzeug/Dienstnummer</label>
+                            <input class="form-control" id="fahrzeug" name="fahrzeug" placeholder="z.B. Sultan RS (Bei Sammelrechnung: Dienstnummer/Name)" required type="text" value="">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label" for="art">Art der Arbeit</label>
+                            <select class="form-select" id="art" name="art" required><option value="">Bitte wählen...</option><option value="Reparatur">Reparatur</option><option value="Tuning">Tuning</option><option value="Radio">Radio</option><option value="Abschleppen">Abschleppen</option></select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label" for="kosten">Kosten (€)</label>
+                            <input class="form-control" id="kosten" min="0" name="kosten" placeholder="0.00" required step="0.01" type="text" value="">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="ist_sammelrechnung">Sammelrechnung</label>
+                            <select class="form-select" id="ist_sammelrechnung" name="ist_sammelrechnung" onchange="toggleUnternehmen(this.value)"><option value="0">Nein</option><option value="1">Ja</option></select>
+                        </div>
+
+                        <div class="mb-3" id="unternehmenField" style="display: none;">
+                            <label class="form-label" for="unternehmen">Unternehmen</label>
+                            <select class="form-select" id="unternehmen" name="unternehmen"><option value="">Bitte wählen...</option><option value="4">Skytrip</option><option value="5">Klinikum</option><option value="6">Stadtverwaltung</option><option value="7">Berufsfeuerwehr_neu</option><option value="8">Polizei_neu</option><option value="9">Bettory</option><option value="10">Express Logistik</option><option value="11">StadtWERKE</option></select>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Eintragen">
+                            <a href="/dashboard" class="btn btn-secondary">Abbrechen</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+<script>
+function toggleUnternehmen(value) {
+    const unternehmenField = document.getElementById('unternehmenField');
+    const unternehmenSelect = document.getElementById('unternehmen');
+    if (value === '1') {
+        unternehmenField.style.display = 'block';
+        unternehmenSelect.required = true;
+    } else {
+        unternehmenField.style.display = 'none';
+        unternehmenSelect.required = false;
+    }
+}
+
+// Initial state
+document.addEventListener('DOMContentLoaded', function() {
+    const sammelrechnungSelect = document.getElementById('ist_sammelrechnung');
+    if (sammelrechnungSelect) {
+        toggleUnternehmen(sammelrechnungSelect.value);
+    }
+});
+</script>
+
+    
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <small>Entwickelt von nuqqeTde</small>
+        </div>
+    </footer>
 </body>
-</html>
+</html> 
