@@ -2,7 +2,6 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
 </head>
 <body>
@@ -12,7 +11,6 @@
   <input type="password" id="password" placeholder="Passwort"><br>
   <button onclick="login()">Anmelden</button>
   <p id="msg" style="color: red;"></p>
-
 <script>
 let loadedUsers = [];
 
@@ -32,7 +30,6 @@ document.getElementById('userfile').addEventListener('change', function() {
 function login() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
-
   const found = loadedUsers.find(u => u.username === user && u.password === pass);
   if (found) {
     localStorage.setItem("isLoggedIn", "true");

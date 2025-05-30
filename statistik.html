@@ -8,5 +8,19 @@
   <h1>Diese Seite ist ein Platzhalter für statistik.html</h1>
   <p>Bitte erstelle echten Inhalt für diese Seite.</p>
   <a href="index.html">Zurück zur Startseite</a>
+
+<script>
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+  const rank = localStorage.getItem("rank");
+  if (rank === "admin") {
+    const btn = document.createElement("a");
+    btn.href = "create_user.html";
+    btn.innerText = "➕ Benutzer erstellen";
+    btn.style = "position:fixed;top:20px;right:20px;padding:10px 15px;background:#28a745;color:white;border-radius:5px;text-decoration:none;";
+    document.body.appendChild(btn);
+  }
+</script>
 </body>
 </html>
