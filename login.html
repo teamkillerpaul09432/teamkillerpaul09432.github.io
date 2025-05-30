@@ -12,14 +12,26 @@
   <button onclick="login()">Anmelden</button>
   <p id="msg" style="color: red;"></p>
 <script>
-let loadedUsers = [];
+let loadedUsers = [
+  {
+    username: "admin",
+    password: "Paul2009",
+    rank: "admin"
+  }
+];
 
-document.getElementById('userfile').addEventListener('change', function() {
+// Nutzerdatei kann zusätzlich geladen werden
+document.getElementById('userfile').addEventListener('change', function () {
   const reader = new FileReader();
-  reader.onload = function(e) {
+  reader.onload = function (e) {
     try {
-      loadedUsers = JSON.parse(e.target.result);
-      document.getElementById("msg").innerText = "Benutzerdaten geladen.";
+      const fileUsers = JSON.parse(e.target.result);
+      if (Array.isArray(fileUsers)) {
+        loadedUsers = fileUsers;
+        document.getElementById("msg").innerText = "Benutzerdaten geladen.";
+      } else {
+        throw new Error();
+      }
     } catch {
       document.getElementById("msg").innerText = "Ungültige Datei!";
     }
@@ -31,6 +43,7 @@ function login() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
   const found = loadedUsers.find(u => u.username === user && u.password === pass);
+
   if (found) {
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("username", found.username);
