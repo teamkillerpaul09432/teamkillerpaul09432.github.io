@@ -474,14 +474,13 @@
     </footer>
 
 <script>
-  if (localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
-  const rank = localStorage.getItem("rank");
-  if (rank === "admin") {
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const currentUser = users.find(u => u.username === localStorage.getItem("username"));
+
+  if (currentUser && currentUser.rank === "admin") {
     const btn = document.createElement("a");
     btn.href = "create_user.html";
-    btn.innerText = "➕ Benutzer erstellen";
+    btn.innerText = "Neuen Benutzer erstellen";
     btn.style = "position:fixed;top:20px;right:20px;padding:10px 15px;background:#28a745;color:white;border-radius:5px;text-decoration:none;";
     document.body.appendChild(btn);
   }
@@ -637,14 +636,13 @@ document.addEventListener('DOMContentLoaded', function() {
     </footer>
 
 <script>
-  if (localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
-  const rank = localStorage.getItem("rank");
-  if (rank === "admin") {
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const currentUser = users.find(u => u.username === localStorage.getItem("username"));
+
+  if (currentUser && currentUser.rank === "admin") {
     const btn = document.createElement("a");
     btn.href = "create_user.html";
-    btn.innerText = "➕ Benutzer erstellen";
+    btn.innerText = "Neuen Benutzer erstellen";
     btn.style = "position:fixed;top:20px;right:20px;padding:10px 15px;background:#28a745;color:white;border-radius:5px;text-decoration:none;";
     document.body.appendChild(btn);
   }
@@ -1054,14 +1052,13 @@ function showDetails(userId) {
     </footer>
 
 <script>
-  if (localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
-  const rank = localStorage.getItem("rank");
-  if (rank === "admin") {
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const currentUser = users.find(u => u.username === localStorage.getItem("username"));
+
+  if (currentUser && currentUser.rank === "admin") {
     const btn = document.createElement("a");
     btn.href = "create_user.html";
-    btn.innerText = "➕ Benutzer erstellen";
+    btn.innerText = "Neuen Benutzer erstellen";
     btn.style = "position:fixed;top:20px;right:20px;padding:10px 15px;background:#28a745;color:white;border-radius:5px;text-decoration:none;";
     document.body.appendChild(btn);
   }
@@ -1221,14 +1218,13 @@ function showDetails(userId) {
     </footer>
 
 <script>
-  if (localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
-  const rank = localStorage.getItem("rank");
-  if (rank === "admin") {
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const currentUser = users.find(u => u.username === localStorage.getItem("username"));
+
+  if (currentUser && currentUser.rank === "admin") {
     const btn = document.createElement("a");
     btn.href = "create_user.html";
-    btn.innerText = "➕ Benutzer erstellen";
+    btn.innerText = "Neuen Benutzer erstellen";
     btn.style = "position:fixed;top:20px;right:20px;padding:10px 15px;background:#28a745;color:white;border-radius:5px;text-decoration:none;";
     document.body.appendChild(btn);
   }
