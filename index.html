@@ -57,7 +57,7 @@
             <div class="col-md-2 sidebar">
                 <h3 class="text-white text-center mb-4">Alphacar</h3>
                 <nav>
-                    <a href="/index.html" class="nav-link"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/index" class="nav-link"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="/neue_reparatur" class="nav-link"><i class="fas fa-wrench me-2"></i>Neue Reparatur</a>
                     <a href="/statistik" class="nav-link"><i class="fas fa-chart-bar me-2"></i>Statistik</a>
                     <a href="/bezahlung" class="nav-link"><i class="fas fa-euro-sign me-2"></i>Bezahlung</a>
@@ -472,6 +472,19 @@
             <small>Entwickelt von nuqqeTde</small>
         </div>
     </footer>
+
+<script>
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const currentUser = users.find(u => u.username === localStorage.getItem("username"));
+
+  if (currentUser && currentUser.rank === "admin") {
+    const btn = document.createElement("a");
+    btn.href = "create_user.html";
+    btn.innerText = "Neuen Benutzer erstellen";
+    btn.style = "position:fixed;top:20px;right:20px;padding:10px 15px;background:#28a745;color:white;border-radius:5px;text-decoration:none;";
+    document.body.appendChild(btn);
+  }
+</script>
 </body>
 </html> 
 
@@ -621,6 +634,19 @@ document.addEventListener('DOMContentLoaded', function() {
             <small>Entwickelt von nuqqeTde</small>
         </div>
     </footer>
+
+<script>
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const currentUser = users.find(u => u.username === localStorage.getItem("username"));
+
+  if (currentUser && currentUser.rank === "admin") {
+    const btn = document.createElement("a");
+    btn.href = "create_user.html";
+    btn.innerText = "Neuen Benutzer erstellen";
+    btn.style = "position:fixed;top:20px;right:20px;padding:10px 15px;background:#28a745;color:white;border-radius:5px;text-decoration:none;";
+    document.body.appendChild(btn);
+  }
+</script>
 </body>
 </html> 
 
@@ -1024,6 +1050,19 @@ function showDetails(userId) {
             <small>Entwickelt von nuqqeTde</small>
         </div>
     </footer>
+
+<script>
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const currentUser = users.find(u => u.username === localStorage.getItem("username"));
+
+  if (currentUser && currentUser.rank === "admin") {
+    const btn = document.createElement("a");
+    btn.href = "create_user.html";
+    btn.innerText = "Neuen Benutzer erstellen";
+    btn.style = "position:fixed;top:20px;right:20px;padding:10px 15px;background:#28a745;color:white;border-radius:5px;text-decoration:none;";
+    document.body.appendChild(btn);
+  }
+</script>
 </body>
 </html> 
 
@@ -1177,5 +1216,18 @@ function showDetails(userId) {
             <small>Entwickelt von nuqqeTde</small>
         </div>
     </footer>
+
+<script>
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const currentUser = users.find(u => u.username === localStorage.getItem("username"));
+
+  if (currentUser && currentUser.rank === "admin") {
+    const btn = document.createElement("a");
+    btn.href = "create_user.html";
+    btn.innerText = "Neuen Benutzer erstellen";
+    btn.style = "position:fixed;top:20px;right:20px;padding:10px 15px;background:#28a745;color:white;border-radius:5px;text-decoration:none;";
+    document.body.appendChild(btn);
+  }
+</script>
 </body>
 </html> 
