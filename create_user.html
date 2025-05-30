@@ -1,78 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neuen Benutzer erstellen</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1f1f1f;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .form-box {
-      background-color: #2c2c2c;
-      padding: 30px;
-      border-radius: 10px;
-      width: 350px;
-    }
-    input, select {
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+  <title>Benutzer erstellen</title>
 </head>
 <body>
-  <div class="form-box">
-    <h2>Neuen Benutzer erstellen</h2>
-    <input type="text" id="new_username" placeholder="Benutzername" required>
-    <input type="password" id="new_password" placeholder="Passwort" required>
-    <select id="new_rank">
-      <option value="user">Benutzer</option>
-      <option value="admin">Admin</option>
-    </select>
-    <button onclick="createUser()">Erstellen</button>
-    <p id="msg" style="color: lightgreen;"></p>
-  </div>
+  <h2>Neuen Benutzer erstellen</h2>
+  <input type="text" id="username" placeholder="Benutzername"><br>
+  <input type="password" id="password" placeholder="Passwort"><br>
+  <select id="rank">
+    <option value="user">Benutzer</option>
+    <option value="admin">Admin</option>
+  </select><br>
+  <button onclick="addUser()">Benutzer hinzufügen</button>
+  <button onclick="downloadUsers()">Benutzer speichern (users.json)</button>
+  <p id="msg" style="color: green;"></p>
 
-  <script>
-    function createUser() {
-      const name = document.getElementById("new_username").value;
-      const password = document.getElementById("new_password").value;
-      const rank = document.getElementById("new_rank").value;
+<script>
+let users = [];
 
-      if (!name || !password) {
-        document.getElementById("msg").innerText = "Bitte alle Felder ausfüllen.";
-        return;
-      }
+function addUser() {
+  const name = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+  const rank = document.getElementById("rank").value;
 
-      let users = JSON.parse(localStorage.getItem("users") || "[]");
-      users.push({ username: name, password: password, rank: rank });
-      localStorage.setItem("users", JSON.stringify(users));
+  if (!name || !pass) {
+    document.getElementById("msg").innerText = "Bitte alle Felder ausfüllen.";
+    return;
+  }
 
-      document.getElementById("msg").innerText = "Benutzer erfolgreich erstellt.";
-      document.getElementById("new_username").value = "";
-      document.getElementById("new_password").value = "";
-    }
-  </script>
+  users.push({ username: name, password: pass, rank: rank });
+  document.getElementById("msg").innerText = "Benutzer hinzugefügt.";
+  document.getElementById("username").value = "";
+  document.getElementById("password").value = "";
+}
+
+function downloadUsers() {
+  const data = JSON.stringify(users, null, 2);
+  const blob = new Blob([data], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "users.json";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+</script>
 </body>
 </html>
